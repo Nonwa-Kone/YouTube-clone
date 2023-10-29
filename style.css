@@ -1,0 +1,262 @@
+/*
+Declaration des variables
+*/
+:root{
+    --body-color: rgb(33, 33, 33);
+    --text-color: rgb(250, 250, 250);
+    --notify-color: rgb(244, 67, 54);
+    --Roboto: 'Roboto', sans-serif;
+    --hover-color: rgb(66, 66, 66);
+    --divider-color: rgb(189, 189, 189);
+}
+
+/*
+Je selection tout le document afin d'appliquer des tyles
+En disant que je veux pas avoir de marge à l'exterieur de mon document
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Roboto);
+}
+
+
+::placeholder{
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+i{
+    cursor: pointer;
+}
+
+body{
+    padding: 0 1.5rem;
+    width: 100vw;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header{
+    position:sticky;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .left{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+header .left svg{
+    color: var(--text-color)!important;
+}
+
+header .left .logo{
+    width: 100px;
+    height: 40px;
+    object-fit: cover;
+}
+
+header .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .center form .input-group{
+    height: 40px;
+    width: 500px;
+    border: 1px solid var(--hover-color);
+    background-color: var(--hover-color);
+    border-radius: 40px/30px;
+}
+
+header .center form .input-group input[type='search']{
+    padding: 0 1rem;
+    width: 90%;
+    height: 100%;
+    background: var(--body-color);
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    border: none;
+    border: 1px solid var(--hover-color);
+    color: var(--text-color);
+    outline: none;
+}
+
+header .center form .input-group span{
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+}
+
+header .center form .input-group span i{
+    font-size: 1.1rem;
+}
+
+
+header .center .micro-card{
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: var(--hover-color);
+}
+
+header .rigth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* 
+Le contenu de ma page web
+*/
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main .nav-menu{
+    height: 100vh;
+    width: 15%;
+    scroll-behavior: smooth;
+    overflow: hidden auto;
+    scrollbar-color: var(--body-color) transparent;
+    scrollbar-width: thin;    
+}
+
+main::-webkit-scrollbar {
+    width: 8px;
+  }
+
+
+
+  /* Ascenseur */
+main::-webkit-scrollbar-thumb {
+    background: var(--body-color);
+    border-radius: 8px;
+  }
+
+main .nav-menu .divider{
+    border: 1px solid var(--divider-color);
+    margin: 1rem 0;
+}
+
+main .nav-menu nav ul li{
+    width: 100%;
+    list-style: none;
+    line-height: 2rem;
+    transition: 0.4s;
+}
+
+main .nav-menu nav ul li a i{
+    margin-inline: 1rem;
+    font-size: 1.1rem;
+}
+
+main .nav-menu nav ul li a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+main .nav-menu nav ul li:hover{
+    width: inherit;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--hover-color);
+}
+
+[role][aria-labelledby][tabindex] {
+    overflow: auto;
+  }
+  
+  [role][aria-labelledby][tabindex]:focus {
+    outline: .1em solid blue;
+  }
+
+main .content{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main .content .col {
+    width: 23%;
+    height: 300px;
+    border: 1px solid var(--hover-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--hover-color);
+}
+
+main .content .col video{
+    width: 100%;
+    height: 200px;
+}
+
+main .content .col .desc__post{
+    height: 100px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .col .desc__post h5{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+/* 
+Media Query
+Encore appeler responsive 
+Ou les differentes formats mobile
+*/
+
+@media (max-width: 797px) {
+
+    main .nav-menu{
+        width: 30%;
+    }
+
+    main .nav-menu nav ul li a{
+        font-size: 1em;
+    }
+
+    main .content .col{
+        width: 45%;
+    }
+
+    main .content .col .desc__post h5{
+        font-size: 1em;
+    }
+}
+@media (max-width: 560px) {
+
+    main .nav-menu{
+        width: 45%;
+    }
+
+    main .content .col{
+        width: 90%;
+    }
+}
